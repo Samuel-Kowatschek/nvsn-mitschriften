@@ -11,7 +11,7 @@
 
 - Programm wird ausgeführt
 - Verhalten, Code-Pfade
-- Debugger
+- Debugger wird am Programm angehängt
 - Unterschiedliche Inputs
     - Dateien
     - User-Eingaben
@@ -37,8 +37,8 @@
     - Maschinen Code : Assembly = 1:1
     - Assembler lesen kann schwierig sein
     - Tools:
-        - AIDA Pro
-        - Radar 2
+        - IDA Pro
+        - Radare 2
     - Nativ vs Byte Code
         - Byte Code wird von Runtime / Virtueller Maschine (JVM) zu Maschinen Code übersetzt
         
