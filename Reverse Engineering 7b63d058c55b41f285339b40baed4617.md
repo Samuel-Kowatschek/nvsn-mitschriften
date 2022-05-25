@@ -28,19 +28,22 @@
 ### Reverse Engineering
 
 - Decompiler
-    - Versucht Code in Programmiersprache zu erzeugen
+    - Versucht Code in einer höheren Programmiersprache zu erzeugen (Bsp. C bei native x86 oder x64 oder Java bei Smali ByteCode)
     - Code Qualität oft nicht gut
-    - Code kann nicht richtig sein
-    - Komplexe Programme funktionieren nicht
+    - Code meist nicht *vollständig* richtig, da viele Informationen durch den Compiler entfernt wurden
+    - Symbole, z.B. Funktions- oder Variablennamen, sind nicht wiederherstellbar, da durch Compiler entfernt
 - Disassembler
-    - Assembler Code aus kompiliertem Programm
-    - Maschinen Code : Assembly = 1:1
-    - Assembler lesen kann schwierig sein
+    - Versucht aus einer (großen) Reihe von Bytes (z.B. aus einer .exe) einzelne Anweisungen zu interpretieren
+    - Ausgabe des Disassemblers ist meist immer Assembly einer bestimmten Architektur (z.B. x86 Assembly bei Intel oder AMD)
+    - Assembler lesen ist schwierig, da Control-Flow (if, else, switch, Schleifen, ...) nicht leicht interpretierbar
+    - Output des Disassemblers wird meist nochmal durch einen Decompiler gejagt (z.b. HexRays bei IDA Pro oder ret-dec bei Radare2)
     - Tools:
-        - IDA Pro
-        - Radare 2
+        - IDA Pro (Teuer, 2000€ aufwärts, Closed-Source) (Profi-Features, z.B. Debugger, deobfuscator, Python scripting, ...)
+        - Radare 2 (OpenSource, gratis (na geh), jedoch für weniger Architekturen geeignet)
     - Nativ vs Byte Code
-        - Byte Code wird von Runtime / Virtueller Maschine (JVM) zu Maschinen Code übersetzt
+        - Byte Code wird von Runtime (z.B. CLR bei .NET) / Virtueller Maschine (JVM) interpretiert, wodurch Architekturelle und Betriebssystemunabhängige Ausführung ermöglicht wird.
+        - Nativer Code ist immer speziell für eine Architektur (z.B. x86 Intel) kompiliert und hängt ggf. von bestimmten OS-APIs ab.
+        - Nativer Code ist meist immer ein bisschen schneller in der Ausführung als interpretierte sprachen, da diese direkt auf der CPU ausgeführt werden können.
         
 
 ### Android
