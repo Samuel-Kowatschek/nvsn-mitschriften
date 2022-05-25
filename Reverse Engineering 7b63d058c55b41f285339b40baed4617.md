@@ -48,6 +48,10 @@
 
 ### Android
 
-Android verwendet Java-ähnliche VM → Android Runtime
+Android verwendet Java-ähnliche VM (Dalvik) → Android Runtime
+Verwendete ByteCode von Dalvik = Smali genannt
 
-Byte Code = Smali
+Bei Smali handelt es sich wiederrum um interpretierte Anweisungen, weshalb meist wichtige Symbole (Funktions- und Variablennamen) noch zum Großteil vorhanden sind.
+- Disassembling / Decompiling
+  Android Apps sind immer als .apk Datei gespeichert. Diese sind eigentlich nur ein komprimiertes Archiv, welches einzelne Ressourcen der App sowie den Dalvik Byte-Code in Form von .dex Datein beeinhaltet. Diese .dex Datein können mithilfe von dex2jar in ein Java-Archiv (.jar) umgewandelt werden. Im Anschluss ist es mit einem Decompiler wie Luyten (https://github.com/deathmarine/Luyten) möglich, den Quellcode in einer Höheren Programmiersprache, wie Java oder Kotlin, einzusehen.
+
